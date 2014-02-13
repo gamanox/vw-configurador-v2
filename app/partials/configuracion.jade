@@ -1,0 +1,16 @@
+#configuracion
+	.div-xpand
+		a.btn.open.null.drkbtn(href="#")
+		.titleCont
+			p.title {{model}}
+			p.subtitle {{version}}
+			.precioCont
+				a.null.tuPrecio.active(href="", onclick="tuprecio();return false;") tu precio
+				a.null.Contado(href="", onclick="contado();return false;") de contado
+				.btnPrecioCont
+					.square
+				p.precio 
+					sub $
+					| {{price}}
+			.divide
+		.cont

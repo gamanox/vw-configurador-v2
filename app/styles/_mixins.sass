@@ -1,0 +1,75 @@
+
+@mixin texto($font, $size, $color)
+	font-family: $font
+	font-size: $size
+	color: $color
+
+
+@mixin shadow($x, $y, $blur, $color)
+	text-shadow: $x $y $blur $color
+	filter: Shadow(Color=$color, Direction=130, Strength=1)
+@mixin shadow2($x, $y, $blur, $color, $x2, $y2, $blur2, $color2)
+	text-shadow: $x $y $blur $color, $x2 $y2 $blur2 $color2
+	filter: Shadow(Color=$color, Direction=130, Strength=1)
+
+@mixin boxshadow($x, $y, $blur, $color)
+	-webkit-filter: drop-shadow($x $y $blur $color)
+	// filter: url(#drop-shadow);
+	// -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12,
+	// Color='#444')";
+	// filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12,
+	// Color='#444')";
+@mixin filterS($x, $y, $blur, $color)
+	-moz-box-shadow: $x $y $blur $color
+	-webkit-box-shadow: $x $y $blur $color
+	box-shadow: $x $y $blur $color
+
+
+@mixin border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+	-ms-border-radius: $radius
+	-o-border-radius: $radius
+	border-radius: $radius
+
+@mixin img($url, $w, $h)
+
+	background-repeat: no-repeat
+	background-position: 50% 50%
+	background-image: url($url)
+	@if $w > 0 and $h > 0
+		width: $w
+		height: $h
+
+@mixin transition($prop)
+	-moz-transition: $prop 0.4s
+	-webkit-transition: $prop 0.4s
+	-o-transition: $prop 0.4s
+	transition: $prop 0.4s
+	-webkit-backface-visibility: hidden
+@mixin transitionT($prop, $time, $easing)
+	-moz-transition: $prop $time $easing
+	-webkit-transition: $prop $time $easing
+	-o-transition: $prop $time $easing
+	transition: $prop $time $easing
+	-webkit-backface-visibility: hidden
+
+
+@mixin noselect
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+@mixin transform($prop)
+	-moz-transform: $prop
+	-webkit-transform: $prop
+	-o-transform: $prop
+	transform: $prop
+
+@mixin scale($x, $y)
+	transform: scale($x,$y)
+	-ms-transform: scale($x,$y) /* IE 9 */
+	-webkit-transform: scale($x,$y)/* Safari and Chrome */

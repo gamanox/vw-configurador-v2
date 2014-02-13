@@ -1,0 +1,290 @@
+@import "colors"
+@import "fonts"
+@import "mixins"
+
+a
+  @include transitionT(all, 0.4s, ease-in-out)
+
+html, body
+  width: 100%
+  height: 100%
+  padding: 0
+  margin: 0
+  background: #e5e5e5
+.panelConfig
+  //width: 367px
+  height: 100%
+  position: absolute
+  //background-color: #163866
+  display: block
+  right: 1px
+  overflow: auto
+  width: auto
+  z-index: 0
+  @include transform(matrix(1,0,0,1,0,0))
+  .content
+    height: 100%
+    overflow: auto
+  //-webkit-transform: translate(-367px, 0px)
+.mainMenu
+  position: relative
+  z-index: 1
+  width: 98px
+  
+  height: 100%
+  background: #fff
+  transition: width 0.2s ease-in-out
+  .menuBg
+    height: 100%
+    display: table
+    position: relative
+    width: 100%
+    background-color: #FFF
+  .items
+    display: table-cell
+    vertical-align: middle
+    position: relative
+    z-index: 2
+    
+  
+  &:hover
+    width: 148px
+    transition: width 0.2s ease-in-out
+    .items
+      .item
+        //transition: width 0.4s ease-in-out
+        padding-top: 15px
+        height: 81px
+        p
+          transition: all 0.2s ease-in-out
+          display: block
+          opacity: 1
+          color: #a0a2ab
+  
+  .logo
+    width: 100%
+    display: block
+    position: absolute
+    height: 180px
+    background-image: url(http://i.imgur.com/5Igo7B6.png)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    z-index: 3
+    
+  a.item
+    text-decoration: none
+    width: 100%
+    height: 70px
+    padding-top: 26px
+    display: block
+    float: left
+    border-bottom: 1px solid #e5e5e5
+    transition: all 0.2s ease-in-out
+        
+    &.manejo
+      .icon
+        background-image: url(http://f.cl.ly/items/1j0K2H0j2J1P0L1p3z01/icon-prueba-de-manejo-inactive.svg)
+      &:hover
+        
+        background-color: #08c7ff
+        p
+          display: block
+          opacity: 1
+          color: #fff
+        .icon
+          background-image: url(http://f.cl.ly/items/1h152E1t1Y1i2K3h0x46/icon-prueba-de-manejo-active.svg)  
+      &.active
+        
+        background-color: #08c7ff
+        p
+          display: block
+          opacity: 1
+          color: #fff
+        .icon
+          background-image: url(http://f.cl.ly/items/1h152E1t1Y1i2K3h0x46/icon-prueba-de-manejo-active.svg)  
+    
+    &.calculadora
+      
+      .icon
+        background-image: url(http://f.cl.ly/items/2W3d35210m0K2l0M3V3G/icon-simuladora-financiera-inactive.svg)
+      &:hover
+        
+        background-color: #2c2c2d
+        p
+          display: block
+          color: #fff
+        .icon
+          background-image: url(http://f.cl.ly/items/1u1g1Y1y423V2i3f1P10/icon-simuladora-financiera-active.svg)  
+      &.active
+        
+        background-color: #2c2c2d
+        p
+          display: block
+          color: #fff
+        .icon
+          background-image: url(http://f.cl.ly/items/1u1g1Y1y423V2i3f1P10/icon-simuladora-financiera-active.svg)  
+    
+    &.misvw
+      .icon
+        background-image: url(http://f.cl.ly/items/113M1b3I2G0M3S430327/icon-mis-volkswagen-inactive.svg)
+      &:hover
+        
+        background-color: #d6d7d8
+        p
+          display: block
+          color: #fff
+        .icon
+          background-image: url(http://f.cl.ly/items/463W0c3H1i3a11130c1K/icon-mis-volkswagen-active.svg)  
+      &.active
+        
+        background-color: #d6d7d8
+        p
+          display: block
+          color: #fff
+        .icon
+          background-image: url(http://f.cl.ly/items/463W0c3H1i3a11130c1K/icon-mis-volkswagen-active.svg)  
+      
+      
+    &.configuracion
+      .icon
+        background-image: url(http://f.cl.ly/items/47253v2N0G2j2y3p391f/icon-mi-configuracion-inactive.svg)
+      &:hover
+        
+        background-color: $configback
+        p
+          display: block
+          color: #fff
+        .icon
+          background-image: url(http://f.cl.ly/items/3F3Y0M2c1G0k060i372t/icon-mi-configuracion-active.svg)
+      &.active
+        
+        background-color: $configback
+        p
+          display: block
+          color: #fff
+        .icon
+          background-image: url(http://f.cl.ly/items/3F3Y0M2c1G0k060i372t/icon-mi-configuracion-active.svg)
+        
+    
+    &:first-child
+      border-top: 1px solid #e5e5e5
+    .icon
+      margin-left: auto
+      margin-right: auto
+      width: 44px
+      display: block
+      
+      height: 44px
+      
+    p
+      transition: all 0.2s ease-in-out
+      font-size: 12px
+      font-family: arial
+      display: block
+      opacity: 0
+      color: #fff
+      margin: 0
+      margin-top: 5px
+      padding: 0
+      text-align: center
+    
+@import "partials/configuracion"
+
+#configuracion
+  width: 367px
+  height: 100%
+  overflow: auto
+  background-color: $configback
+  .div-xpand
+    padding-top: 43px
+    margin-left: 30px
+    margin-right: 30px
+    position: relative
+    .btn
+      position: absolute
+      right: 0
+      z-index: 3
+      @include img("../img/configuracion/icon-open.svg", 30px, 30px)
+      background-color: $btndrkoff
+      @include border-radius(2px)
+      
+      
+    .titleCont
+      .precioCont
+        //width: 172px
+        height: 37px
+        position: relative
+        margin-top: 19px
+        a.tuPrecio
+          width: 57px
+          display: block
+          height: 26px
+          position: relative
+          z-index: 3
+          @include texto($semi, 15px, $textgrey)
+          padding-top: 11px
+          float: left
+          padding-right: 10px
+          padding-left: 10px
+          &.active
+            color: $white
+        a.Contado
+          width: 74px
+          display: block
+          height: 26px
+          position: relative
+          z-index: 3
+          @include texto($semi, 15px, $textgrey)
+
+          padding-top: 11px
+          float: left
+          padding-left: 10px
+          padding-right: 10px
+          &.active
+            color: $white
+        p.precio
+          @include texto($black, 30px, $white)
+          float: right
+          sub
+            font-size: 15px
+        .btnPrecioCont
+          width: 172px
+          height: 37px
+          position: absolute
+          top: 0
+          left: 0
+          background-color: $btndrkoff
+          @include border-radius(2px)
+
+          .square
+            position: absolute
+            top: 0
+            left: 0
+            width: 77px
+            height: 37px
+            @include border-radius(2px)
+            background-color: $btndrkon
+            @include transitionT(all, 0.2s, ease-in-out)
+            &.derecha
+              width: 94px
+              left: 78px
+
+    .title
+      position: relative
+      @include texto($black, 30px, $white)
+    .subtitle
+      position: relative
+      @include texto($semi, 18px, $textcyan)
+      margin-top: 10px
+
+    .divide
+      border-bottom: 1px solid #0b203c
+      height: 0
+      width: 100%
+      margin-top: 20px
+      margin-bottom: 20px
+    .cont
+      position: relative
+    
+  
+    

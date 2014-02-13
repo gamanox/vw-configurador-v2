@@ -1,0 +1,47 @@
+doctype
+html(ng-app="vwconfig")
+	head
+		meta(charset='utf-8' )
+		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		title vwconfig
+		link(rel='favicon.ico', href='favicon.ico')
+		link(rel='stylesheet', href='/css/app.css')
+		script.
+			window.brunch = window.brunch || {};
+			window.brunch['auto-reload'] = {
+			enabled: true
+			};
+		script(src='/js/vendor.js')
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js')
+		script(src='/js/app.js')
+
+	body
+		
+
+		.mainMenu
+		
+			.panelConfig
+				.content(ui-view)
+			.menuBg
+				a.logo(href="#/")
+					
+				.items
+					a.configuracion.item(href="#/configuracion")
+						.icon
+						p
+							| Mi Configuración
+					a.calculadora.item(href="#/calculadora")
+						.icon
+						p
+							| Simuladora Financiera
+			
+					a.manejo.item(href="#")
+						.icon
+						p
+							| Prueba de Manejo
+			
+					a.misvw.item(href="#")
+						.icon
+						p
+							| Mis Volkswagen
+		
