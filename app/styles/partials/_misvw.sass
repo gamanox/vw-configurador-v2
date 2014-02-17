@@ -1,19 +1,21 @@
-
-
-
-#configuracion
+#misvw
   width: 367px
   height: auto
   //overflow: auto
-  background-color: $configback
+  background-color: $misvwback
   .div-xpand
     padding-top: 10px
     margin-left: 30px
     margin-right: 30px
     position: relative
+    &.legales
+      .subtitle
+        color: $textlgtgrey
     &.resumen
       .cont
         padding-top: 36px
+      .subtitle
+        color: $textblack
     &:first-child
       padding-top: 43px
 
@@ -22,7 +24,7 @@
       right: 0
       z-index: 3
       @include img("../img/configuracion/icon-open.svg", 30px, 30px)
-      background-color: $btndrkoff
+      background-color: $btngryoff
       @include border-radius(2px)
       @include transitionT(all, 0.2, ease-in-out)
 
@@ -43,7 +45,7 @@
           background-color: $btnlgton
 
       .finishText
-        @include texto($semi, 15px, $legales)
+        @include texto($semi, 15px, $textblack)
         margin-top: 36px
         margin-bottom: 30px
         text-align: center
@@ -60,7 +62,7 @@
           background-position: 13px 26px
           
           background-repeat: no-repeat
-          background-color: $btnbigdrkoff
+          background-color: #b8b9be
           @include border-radius(2px)
           position: relative
           &:hover
@@ -70,7 +72,7 @@
               color: $white
           p
             z-index: 3
-            @include texto($semi, 15px, $legales)
+            @include texto($semi, 15px, $white)
             padding-left: 20px
             padding-right: 20px
             width: 105px
@@ -83,21 +85,21 @@
 
           float: right
           display: block
-          background-image: url("../img/configuracion/icon-prueba-de-manejo-inactive.svg")
+          background-image: url("../img/misvw/icon-prueba-de-manejo-inactive.svg")
           background-position: 13px 26px
           
           background-repeat: no-repeat
-          background-color: $btnbigdrkoff
+          background-color: #b8b9be
           @include border-radius(2px)
           position: relative
           &:hover
-            background-image: url("../img/configuracion/icon-prueba-de-manejo-active.svg")
+            background-image: url("../img/misvw/icon-prueba-de-manejo-active.svg")
             background-color: $btndrkon
             p
               color: $white
           p
             z-index: 3
-            @include texto($semi, 15px, $legales)
+            @include texto($semi, 15px, $white)
             padding-left: 20px
             padding-right: 20px
             width: 105px
@@ -114,72 +116,72 @@
         margin-bottom: 15px
    
         p.titulo
-          @include texto($book, 15px, $textgrey)
+          @include texto($book, 15px, $textlgtgrey)
           text-indent: 10px
         p.property
-          @include texto($semi, 16px, $white)
+          @include texto($semi, 16px, $textblack)
           text-indent: 10px
           margin-top: 10px
-        a.editar
-          position: absolute
-          right: 0
-          top: 0
-          display: block
-          width: 87px
-          height: 33px
-          z-index: 3
+        // a.editar
+        //   position: absolute
+        //   right: 0
+        //   top: 0
+        //   display: block
+        //   width: 87px
+        //   height: 33px
+        //   z-index: 3
           
-          overflow: hidden
-          .icon
-            position: absolute
-            top: 8px
-            right: 8px
-            z-index: 4
-            @include img("../img/configuracion/icon-edit-inactive.svg", 15px, 15px)
+        //   overflow: hidden
+        //   .icon
+        //     position: absolute
+        //     top: 8px
+        //     right: 8px
+        //     z-index: 4
+        //     @include img("../img/configuracion/icon-edit-inactive.svg", 15px, 15px)
             
-            background-position: right middle
-            @include transitionT(all, 0.3s, ease-in-out)
-          p
-            @include texto($semi, 15px, $white)
-            opacity: 0
-            @include transitionT(opacity, 0.3s, ease-in-out)
-            @include noselect
-            position: relative
-            z-index: 3
-            text-indent: 12px
-            padding-top: 9px
-          .square
-            @include border-radius(2px)
-            background-color: $btndrkon
-            position: absolute
-            width: 87px
-            height: 33px
-            left: 87px
-            top: 0
-            @include transitionT(left, 0.2s, ease-in-out)
+        //     background-position: right middle
+        //     @include transitionT(all, 0.3s, ease-in-out)
+        //   p
+        //     @include texto($semi, 15px, $white)
+        //     opacity: 0
+        //     @include transitionT(opacity, 0.3s, ease-in-out)
+        //     @include noselect
+        //     position: relative
+        //     z-index: 3
+        //     text-indent: 12px
+        //     padding-top: 9px
+        //   .square
+        //     @include border-radius(2px)
+        //     background-color: $btndrkon
+        //     position: absolute
+        //     width: 87px
+        //     height: 33px
+        //     left: 87px
+        //     top: 0
+        //     @include transitionT(left, 0.2s, ease-in-out)
 
 
 
-          &:hover
-            .icon
-              background-image: url("../img/configuracion/icon-edit-active.svg")
-            .square
-              left: 0
-            p
+        //   &:hover
+        //     .icon
+        //       background-image: url("../img/configuracion/icon-edit-active.svg")
+        //     .square
+        //       left: 0
+        //     p
 
-              opacity: 1
+        //       opacity: 1
 
 
           
 
       p.configDescrip
 
-        @include texto($book, 15px, $textbluegrey) 
+        @include texto($book, 15px, $textblack) 
         padding-top: 12px
         margin-bottom: 16px
         line-height: 20px
         &.legales
-          @include texto($book, 14px, $legales)
+          @include texto($book, 14px, $textlgtgrey)
           padding-top: 22px
           line-height: 18px
       .potencia-rendimiento
@@ -200,7 +202,7 @@
           height: auto
           float: left
         p.potencia, p.rendimiento
-          @include texto($black, 48px, $white)
+          @include texto($black, 48px, $textblack)
           text-align: center
           sub
             font-size: 14px
@@ -208,19 +210,19 @@
         p.rendimiento
           text-align: right
         p.title
-          @include texto($semi, 14px, $textgrey)
+          @include texto($semi, 14px, $textlgtgrey)
           margin-top: 15px
           text-align: center
       .alimentCont
-        background-image: url("../img/configuracion/icon-alimentacion.svg")
+        background-image: url("../img/misvw/icon-alimentacion.svg")
         background-repeat: no-repeat
         p.text
-          @include texto($semi, 14px, $textgrey)
+          @include texto($semi, 14px, $textlgtgrey)
           text-indent: 36px
           margin-bottom: 7px
           padding-top: 10px
         p.alimentacion
-          @include texto($semi, 18px, $white)
+          @include texto($semi, 18px, $textblack)
           margin-bottom: 32px
           text-indent: 36px
 
@@ -237,7 +239,7 @@
           height: 26px
           position: relative
           z-index: 3
-          @include texto($semi, 15px, $textgrey)
+          @include texto($semi, 15px, #b8b9be)
           padding-top: 11px
           float: left
           padding-right: 7px
@@ -250,7 +252,7 @@
           height: 26px
           position: relative
           z-index: 3
-          @include texto($semi, 15px, $textgrey)
+          @include texto($semi, 15px, #b8b9be)
 
           padding-top: 11px
           float: left
@@ -259,7 +261,7 @@
           &.active
             color: $white
         p.precio
-          @include texto($black, 30px, $white)
+          @include texto($black, 30px, $textblack)
           float: right
           sub
             font-size: 15px
@@ -269,7 +271,7 @@
           position: absolute
           top: 0
           left: 0
-          background-color: $btndrkoff
+          background-color: #ecedee
           @include border-radius(2px)
 
           .square
@@ -287,17 +289,86 @@
 
     .title
       position: relative
-      @include texto($black, 30px, $white)
+      @include texto($black, 30px, $textblack)
     .subtitle
       position: relative
       @include texto($semi, 18px, $textcyan)
       margin-top: 10px
 
     .divide
-      border-bottom: 1px solid #0b203c
+      border-bottom: 1px solid #b8b9be
       height: 0
       width: 100%
       margin-top: 20px
       margin-bottom: 20px
     .cont
       position: relative
+
+#contentMisVW
+  position: absolute
+  left: 0px
+  top: 0
+  @include transform(translate(-96px, 0px))
+  height: 100%
+  width: 194px
+  display: block
+  z-index: 0
+  background-color: #FFF
+  p.title
+    @include texto($black, 24px, $textblack)
+    margin-right: 20px
+    margin-left: 18px
+    padding-top: 42px
+    margin-bottom: 15px
+    width: 154px
+  .divider
+    border-bottom: 1px solid #d7d7d9
+    height: 0
+    width: 100%
+    margin-top: 15px
+  .car
+    display: block
+    
+    width: 156px
+    padding-left: 18px
+    padding-right: 20px
+    padding-bottom: 20px
+    padding-top: 12px
+    border-bottom: 1px solid #d7d7d9
+    background-color: #FFF
+    @include transitionT(background-color, 0.2s, ease-in-out)
+    cursor: pointer
+    &:hover
+      background-color: #ecedee
+    p.model
+      @include texto($black, 18px, $textblue)
+      margin-bottom: 6px
+    p.version
+      @include texto($semi, 15px, $textblack)
+      margin-bottom: 18px
+    .img
+      margin-bottom: 7px
+
+    .priceCont
+      width: 100%
+      position: relative
+      p.desde
+        @include texto($book, 15px, $textlgtgrey)
+        margin-bottom: 5px
+      p.price
+        @include texto($book, 15px, $textblack)
+      .delete
+        position: absolute
+        right: 0
+        top: 0
+        width: 32px
+        height: 32px
+        @include border-radius(2px)
+        background-color: #d7d7d9
+        background-image: url("../img/misvw/icon-misvw-eliminar-inactive.svg")
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        @include transitionT(all, 0.2s, ease-in-out)
+        &:hover
+          background-color: $btndrkon
+          background-image: url("../img/misvw/icon-misvw-eliminar-active.svg")

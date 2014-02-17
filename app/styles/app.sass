@@ -3,7 +3,7 @@
 @import "mixins"
 
 a
-  @include transitionT(all, 0.4s, ease-in-out)
+  @include transitionT(all, 0.2s, ease-in-out)
 
 html, body
   width: 100%
@@ -20,7 +20,7 @@ html, body
   right: 1px
   overflow: auto
   width: auto
-  z-index: 0
+  z-index: 1
   @include transform(matrix(1,0,0,1,0,0))
   .content
     height: 100%
@@ -28,7 +28,7 @@ html, body
   //-webkit-transform: translate(-367px, 0px)
 .mainMenu
   position: relative
-  z-index: 1
+  
   width: 98px
   
   height: 100%
@@ -40,6 +40,7 @@ html, body
     position: relative
     width: 100%
     background-color: #FFF
+    z-index: 2
   .items
     display: table-cell
     vertical-align: middle
@@ -178,8 +179,8 @@ html, body
       
     p
       transition: all 0.2s ease-in-out
-      font-size: 12px
-      font-family: arial
+      font-size: 13px
+      font-family: $semi
       display: block
       opacity: 0
       color: #fff
@@ -188,27 +189,322 @@ html, body
       padding: 0
       text-align: center
     
-@import "partials/configuracion"
 
-#configuracion
+
+
+
+        
+@import "partials/configuracion"
+@import "partials/misvw"
+
+  
+
+
+
+
+#manejo
   width: 367px
-  height: 100%
-  overflow: auto
-  background-color: $configback
+  height: auto
+  //overflow: auto
+  background-color: $manejoback
   .div-xpand
-    padding-top: 43px
+    padding-top: 10px
     margin-left: 30px
     margin-right: 30px
     position: relative
+    input
+      border: none
+      @include border-radius(2px)
+      width: 100%
+      height: 44px
+      @include texto($book, 14px, $textblack)
+      margin-bottom: 7px
+      text-indent: 15px
+    p.localizacion
+      @include texto($semi, 15px, $textblack)
+      margin-top: 20px
+      margin-bottom: 20px
+    .telcont
+      display: block
+      width: 100%
+      height: 84px
+    .numberCont
+      margin-top: 20px
+      width: 100%
+      display: block
+      height: 48px
+      input.lada
+        width: 86px
+        float: left
+        margin-right: 9px
+      input.tel
+        width: 212px
+        float: left
+        
+    a.telefonobtn
+      width: 92px
+      height: 84px
+      @include border-radius(2px)
+      position: relative
+      float: left
+      display: block
+      background-color: $btnlgtoff
+      @include transitionT(background-image, 0s, ease-in-out)
+      @include transitionT(background-color, 0.1s, ease-in-out)
+      &.casa
+        background-image: url("../img/manejo/icon-casa-inactive.svg")
+        background-position: 50% 40%
+        background-repeat: no-repeat
+        &:hover
+          @include transitionT(background-image, 0s, ease-in-out)
+          background-image: url("../img/manejo/icon-casa-active.svg")
+
+      &.oficina
+        background-image: url("../img/manejo/icon-oficina-inactive.svg")
+        background-position: 50% 40%
+        background-repeat: no-repeat
+        &:hover
+          @include transitionT(background-image, 0s, ease-in-out)
+          background-image: url("../img/manejo/icon-oficina-active.svg")
+
+      &.mobile
+        background-image: url("../img/manejo/icon-mobile-inactive.svg")
+        background-position: 50% 40%
+        background-repeat: no-repeat
+        &:hover
+          @include transitionT(background-image, 0s, ease-in-out)
+          @include transitionT(background-color, 0.1s, ease-in-out)
+
+          background-image: url("../img/manejo/icon-mobile-active.svg")
+
+          
+
+      &:hover
+        background-color: $btnlgton
+        p
+          color: $white
+      p
+        @include texto($semi, 15px, $btnlgton)
+        position: absolute
+        bottom: 7px
+        text-align: center
+        width: 100%
+
+
+    &.resumen
+      .cont
+        padding-top: 36px
+    &:first-child
+      padding-top: 43px
+
     .btn
       position: absolute
       right: 0
       z-index: 3
       @include img("../img/configuracion/icon-open.svg", 30px, 30px)
-      background-color: $btndrkoff
+      background-color: $btnlgton
       @include border-radius(2px)
+      @include transitionT(all, 0.2, ease-in-out)
+
+      &:hover
+        background-color: #1d4f92
+    .finish
+      margin-top: 24px
+      a.guardarConfig
+        display: block
+        width: 100%
+        height: 29px
+        background-color: $btnlgtoff
+        @include texto($semi, 15px, $white)
+        @include border-radius(2px)
+        padding-top: 12px
+        text-align: center
+        &:hover
+          background-color: $btnlgton
+
+      .finishText
+        @include texto($semi, 15px, $legales)
+        margin-top: 36px
+        margin-bottom: 30px
+        text-align: center
+      .finishBtns
+        width: 100%
+        height: 142px
+        display: block
+        a.simuladoraBtn
+          width: 145px
+          height: 142px
+          float: left
+          display: block
+          background-image: url("../img/misvw/icon-simuladora-financiera-inactive.svg")
+          background-position: 13px 26px
+          
+          background-repeat: no-repeat
+          background-color: $btnbigdrkoff
+          @include border-radius(2px)
+          position: relative
+          &:hover
+            background-image: url("../img/misvw/icon-simuladora-financiera-active.svg")
+            background-color: $btndrkon
+            p
+              color: $white
+          p
+            z-index: 3
+            @include texto($semi, 15px, $legales)
+            padding-left: 20px
+            padding-right: 20px
+            width: 105px
+            position: absolute
+            bottom: 20px
+            @include noselect
+        a.pruebaBtn
+          width: 145px
+          height: 142px
+
+          float: right
+          display: block
+          background-image: url("../img/configuracion/icon-prueba-de-manejo-inactive.svg")
+          background-position: 13px 26px
+          
+          background-repeat: no-repeat
+          background-color: $btnbigdrkoff
+          @include border-radius(2px)
+          position: relative
+          &:hover
+            background-image: url("../img/configuracion/icon-prueba-de-manejo-active.svg")
+            background-color: $btndrkon
+            p
+              color: $white
+          p
+            z-index: 3
+            @include texto($semi, 15px, $legales)
+            padding-left: 20px
+            padding-right: 20px
+            width: 105px
+            position: absolute
+            bottom: 20px
+            @include noselect
+
+
+    .cont
       
-      
+      .propiedad
+        width: 100%
+        position: relative
+        margin-bottom: 15px
+   
+        p.titulo
+          @include texto($book, 15px, $textgrey)
+          text-indent: 10px
+        p.property
+          @include texto($semi, 16px, $white)
+          text-indent: 10px
+          margin-top: 10px
+        a.editar
+          position: absolute
+          right: 0
+          top: 0
+          display: block
+          width: 87px
+          height: 33px
+          z-index: 3
+          
+          overflow: hidden
+          .icon
+            position: absolute
+            top: 8px
+            right: 8px
+            z-index: 4
+            @include img("../img/configuracion/icon-edit-inactive.svg", 15px, 15px)
+            
+            background-position: right middle
+            @include transitionT(all, 0.3s, ease-in-out)
+          p
+            @include texto($semi, 15px, $white)
+            opacity: 0
+            @include transitionT(opacity, 0.3s, ease-in-out)
+            @include noselect
+            position: relative
+            z-index: 3
+            text-indent: 12px
+            padding-top: 9px
+          .square
+            @include border-radius(2px)
+            background-color: $btndrkon
+            position: absolute
+            width: 87px
+            height: 33px
+            left: 87px
+            top: 0
+            @include transitionT(left, 0.2s, ease-in-out)
+
+
+
+          &:hover
+            .icon
+              background-image: url("../img/configuracion/icon-edit-active.svg")
+            .square
+              left: 0
+            p
+
+              opacity: 1
+
+
+          
+
+      p.configDescrip
+
+        @include texto($book, 15px, $btndrkoff) 
+        padding-top: 12px
+        margin-bottom: 16px
+        line-height: 20px
+        &.legales
+          @include texto($book, 14px, $textblack)
+          padding-top: 22px
+          line-height: 18px
+      .potencia-rendimiento
+        height: 77px
+        padding-bottom: 12px
+        .potenciaCont
+          width: 49%
+          height: auto
+          float: left
+        .divider
+          border: none
+          border-left: 1px solid #b8b9be
+          width: 0
+          height: 57px
+          float: left
+        .rendimientoCont
+          width: 49%
+          height: auto
+          float: left
+        p.potencia, p.rendimiento
+          @include texto($black, 48px, $white)
+          text-align: center
+          sub
+            font-size: 14px
+            width: 25px
+        p.rendimiento
+          text-align: right
+        p.title
+          @include texto($semi, 14px, $textgrey)
+          margin-top: 15px
+          text-align: center
+      .alimentCont
+        background-image: url("../img/configuracion/icon-alimentacion.svg")
+        background-repeat: no-repeat
+        p.text
+          @include texto($semi, 14px, $textgrey)
+          text-indent: 36px
+          margin-bottom: 7px
+          padding-top: 10px
+        p.alimentacion
+          @include texto($semi, 18px, $white)
+          margin-bottom: 32px
+          text-indent: 36px
+
+
     .titleCont
       .precioCont
         //width: 172px
@@ -224,8 +520,8 @@ html, body
           @include texto($semi, 15px, $textgrey)
           padding-top: 11px
           float: left
-          padding-right: 10px
-          padding-left: 10px
+          padding-right: 7px
+          padding-left: 7px
           &.active
             color: $white
         a.Contado
@@ -238,8 +534,8 @@ html, body
 
           padding-top: 11px
           float: left
-          padding-left: 10px
-          padding-right: 10px
+          padding-left: 7px
+          padding-right: 7px
           &.active
             color: $white
         p.precio
@@ -248,7 +544,7 @@ html, body
           sub
             font-size: 15px
         .btnPrecioCont
-          width: 172px
+          width: 159px
           height: 37px
           position: absolute
           top: 0
@@ -260,31 +556,30 @@ html, body
             position: absolute
             top: 0
             left: 0
-            width: 77px
+            width: 71px
             height: 37px
             @include border-radius(2px)
             background-color: $btndrkon
             @include transitionT(all, 0.2s, ease-in-out)
             &.derecha
-              width: 94px
-              left: 78px
+              width: 88px
+              left: 71px
 
     .title
       position: relative
-      @include texto($black, 30px, $white)
+      @include texto($black, 30px, $btndrkoff)
     .subtitle
       position: relative
-      @include texto($semi, 18px, $textcyan)
+      @include texto($semi, 18px, $white)
       margin-top: 10px
 
     .divide
-      border-bottom: 1px solid #0b203c
+      border-bottom: 1px solid $btnlgton
       height: 0
       width: 100%
       margin-top: 20px
       margin-bottom: 20px
     .cont
       position: relative
-    
-  
-    
+
+

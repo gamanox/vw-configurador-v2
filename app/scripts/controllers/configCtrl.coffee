@@ -1,8 +1,10 @@
-angular
-	.module 'vwconfig'
-	.controller 'configCtrl', ['$scope', ($scope)->
-		$scope.model = "Volkswagen CC"
-		$scope.version = "Track & Fun 4Motion"
-		$scope.price = "814,888"
-		
+app
+	.controller 'configCtrl', ['$scope','Auto', ($scope, Auto)->
+		$scope.auto = Auto
+		$scope.change = ()->
+			$scope.auto.model = "test"
+
+
 	]
+		
+

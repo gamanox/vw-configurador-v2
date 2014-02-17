@@ -19,8 +19,11 @@ html(ng-app="vwconfig")
 		
 
 		.mainMenu
-		
+			
+
 			.panelConfig
+				
+
 				.content(ui-view)
 			.menuBg
 				a.logo(href="#/")
@@ -35,7 +38,7 @@ html(ng-app="vwconfig")
 						p
 							| Simuladora Financiera
 			
-					a.manejo.item(href="#")
+					a.manejo.item(href="#/manejo")
 						.icon
 						p
 							| Prueba de Manejo
@@ -44,4 +47,16 @@ html(ng-app="vwconfig")
 						.icon
 						p
 							| Mis Volkswagen
+			#contentMisVW
+				p.title Mis Volkswagen
+
+				.divider
+				a.car(href="#/misvw")
+					p.model The Beetle
+					p.version Comfortline DSG
+					img.img(src="http://placehold.it/140x71")
+					.priceCont
+						p.desde Desde:
+						p.price $290,270
+						.delete
 		

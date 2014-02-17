@@ -1,37 +1,36 @@
-#configuracion(ng-controller="configCtrl")
+#misvw
 	.div-xpand.modelo
-		
 		a.btn.open.null.drkbtn(href="#")
 		.titleCont
-			p.title(ng-bind="auto.model")
-			p.subtitle {{auto.version}}
+			p.title {{model}}
+			p.subtitle {{version}}
 			.precioCont
-				a.null.tuPrecio.active(href="", onclick="tuprecio('#configuracion');return false;") tu precio
-				a.null.Contado(href="", onclick="contado('#configuracion');return false;") de contado
+				a.null.tuPrecio.active(href="", onclick="tuprecio('#misvw');return false;") tu precio
+				a.null.Contado(href="", onclick="contado('#misvw');return false;") de contado
 				.btnPrecioCont
 					.square
 				p.precio 
 					sub $
-					| {{auto.listPrice}}
+					| {{price}}
 			.divide
 		.cont
 			p.configDescrip
-				| {{auto.description}}
+				| {{description}}
 			.alimentCont
 				p.text
 					| Alimentación
 				p.alimentacion
-					| {{auto.alimentation}}
+					| {{alimentation}}
 			.potencia-rendimiento
 				.potenciaCont
 					p.potencia
-						| {{auto.power}}
+						| {{power}}
 						sub HP
 					p.title Potencia
 				.divider
 				.rendimientoCont
 					p.rendimiento
-						| {{auto.performance}}
+						| {{performance}}
 						sub 
 							| Km/Lt.
 					p.title Rendimiento
@@ -44,46 +43,46 @@
 		.cont
 			.propiedad.transmision
 				p.titulo Transmisión
-				p.property {{auto.transmision}}
-				a.editar(href="")
-					.square
-					p Editar
-					.icon
+				p.property {{transmision}}
+				//- a.editar(href="")
+				//- 	.square
+				//- 	p Editar
+				//- 	.icon
 			.propiedad.color
 				p.titulo Color
-				p.property {{auto.color}}
-				a.editar(href="")
-					.square
-					p Editar
-					.icon
+				p.property {{color}}
+				//- a.editar(href="")
+				//- 	.square
+				//- 	p Editar
+				//- 	.icon
 			.propiedad.vestiduras
 				p.titulo Vestiduras
-				p.property {{auto.interiors}}
-				a.editar(href="")
-					.square
-					p Editar
-					.icon
+				p.property {{interiors}}
+				//- a.editar(href="")
+				//- 	.square
+				//- 	p Editar
+				//- 	.icon
 			.propiedad.paquetes
 				p.titulo Paquetes
-				p.property {{auto.packs}}
-				a.editar(href="")
-					.square
-					p Editar
-					.icon
+				p.property {{packs}}
+				//- a.editar(href="")
+				//- 	.square
+				//- 	p Editar
+				//- 	.icon
 			.propiedad.servicios
 				p.titulo Servicios
-				p.property {{auto.services}}
-				a.editar(href="")
-					.square
-					p Editar
-					.icon
+				p.property {{services}}
+				//- a.editar(href="")
+				//- 	.square
+				//- 	p Editar
+				//- 	.icon
 			.propiedad.garantia
 				p.titulo Garantía
-				p.property {{auto.warranty}}
-				a.editar(href="")
-					.square
-					p Editar
-					.icon
+				p.property {{warranty}}
+				//- a.editar(href="")
+				//- 	.square
+				//- 	p Editar
+				//- 	.icon
 		.finish
 			a.guardarConfig.null(href="")
 				| Guardar en Mis Volkswagen
