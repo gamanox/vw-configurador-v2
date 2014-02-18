@@ -1,5 +1,4 @@
-angular
-	.module 'vwconfig'
+app
 	.controller 'calcCtrl', ['$scope', ($scope)->
 		$scope.title = "Calculadora"
 		
