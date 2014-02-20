@@ -13,6 +13,7 @@ html(ng-app="vwconfig")
 			};
 		script(src='/js/vendor.js')
 		script(src='http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js')
+		script(src='//code.jquery.com/ui/1.10.4/jquery-ui.js')
 		script(src='/js/app.js')
 
 	body
@@ -24,10 +25,11 @@ html(ng-app="vwconfig")
 			.panelConfig
 				
 
-				.content(ui-view)
+				.content(ui-view="main")
 			.menuBg
 				a.logo(href="#/")
-					
+				a.map(href="")
+				a.tag(href="")
 				.items
 					a.configuracion.item(href="#/configuracion")
 						.icon
@@ -45,6 +47,7 @@ html(ng-app="vwconfig")
 			
 					a.misvw.item(href="#")
 						.icon
+						.count.active 36
 						p
 							| Mis Volkswagen
 			#contentMisVW
@@ -59,4 +62,34 @@ html(ng-app="vwconfig")
 						p.desde Desde:
 						p.price $290,270
 						.delete
-		
+		#mainCont
+			a.buscarBtn(href="#/buscador")
+			.section.rueda
+				.wheel
+				.costoCont
+					.desdeCont
+						p.price $290,270
+						p.desde Desde:
+					.titlePrecio.chngPrecio
+						a(href="") De contado
+						a.active(href="") Precio
+					
+					p.precioTotal
+						sub $
+						| 236,072
+			.section(ui-view="buscador")
+			
+
+
+			#footer
+				.left
+					.leftContent
+						p.copyright Volkswagen México 2013
+						a(href="") Aspectos Legales
+						.divide
+						a(href="") Volkswagen International
+				.right
+					.socialCont
+						a.tw.socialbtn(href="")
+						a.fb.socialbtn(href="")
+						a.gp.socialbtn(href="")

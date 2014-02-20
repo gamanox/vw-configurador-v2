@@ -1,0 +1,142 @@
+#buscador
+  width: 100%
+
+  
+  position: relative
+  vertical-align: middle
+  display: table-cell
+
+  .cont
+    margin-left: auto
+    margin-right: auto
+    width: 808px
+    height: 700px
+    .inputCont
+      width: 100%
+      height: 143px
+    input.buscar
+      width: 100%
+      height: 143px
+      background-color: transparent
+      border: none
+      border-bottom: 2px solid $misvwback
+      @include texto($semi, 100px, $textblack)
+      line-height: 180px
+      &:focus
+        outline: 0
+
+      :-webkit-input-placeholder 
+        color: #c2c8ce
+      
+
+      :-moz-placeholder
+        color: #c2c8ce  
+      
+
+
+      :-ms-input-placeholder   
+        color: #c2c8ce  
+  
+    .resultados
+      margin-top: 12px
+      .car
+        display: block
+        position: relative
+        width: 222px
+        padding-left: 18px
+        padding-right: 20px
+        padding-bottom: 20px
+        padding-top: 12px
+        border-bottom: 1px solid #d7d7d9
+        background-color: transparent
+        @include transitionT(background-color, 0.2s, ease-in-out)
+        cursor: pointer
+        &.new
+          .nuevo
+            display: block
+          
+        .nuevo
+          display: none
+          @include border-radius(2px)
+          @include texto($black, 10px, $white)
+          padding: 5px
+          width: auto
+          position: absolute
+          right: 20px
+          top: 15px
+          line-height: 10px
+          background-color: #ffa21e
+
+          
+        &:hover
+          background-color: #fff
+          .priceCont
+            a.editar
+              .icon
+                background-image: url("../img/busqueda/icon-configurar-active.svg")
+              .square
+                width: 133px
+                background-color: #0775c9
+              p
+
+                opacity: 1
+        p.model
+          @include texto($black, 18px, $textblue)
+          margin-bottom: 6px
+        p.version
+          @include texto($semi, 15px, $textblack)
+          margin-bottom: 18px
+        .img
+          margin-bottom: 7px
+          margin-left: auto
+          margin-right: auto
+          margin-top: 29px
+          display: block
+          width: 198px
+
+        .priceCont
+          width: 100%
+          position: relative
+          margin-top: 20px
+          p.desde
+            @include texto($book, 15px, $textlgtgrey)
+            margin-bottom: 5px
+          p.price
+            @include texto($book, 15px, $textblack)
+          a.editar
+            position: absolute
+            right: 0
+            top: 0
+            display: block
+            width: 133px
+            height: 33px
+            z-index: 3
+            
+            overflow: hidden
+            .icon
+              position: absolute
+              top: 9px
+              right: 9px
+              z-index: 4
+              @include img("../img/busqueda/icon-configurar-inactive.svg", 15px, 15px)
+              
+              background-position: right middle
+              @include transitionT(all, 0.3s, ease-in-out)
+            p
+              @include texto($semi, 15px, $white)
+              opacity: 0
+              @include transitionT(opacity, 0.3s, ease-in-out)
+              @include noselect
+              position: relative
+              z-index: 3
+              text-indent: 12px
+              padding-top: 9px
+            .square
+              background-color: #FFF
+              @include border-radius(2px)
+              position: absolute
+              width: 33px
+              height: 33px
+              right: 0px
+              top: 0
+              @include transitionT(all, 0.1s, ease-in-out)

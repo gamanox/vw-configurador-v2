@@ -18,13 +18,17 @@ contado = (section)->
 	console.log "add"
 
 sidebarIn = ->
-	abierto = "true"
+	
+
+	TweenMax.to '#contentMisVW', 0.2, 
+		x: -97
+		ease: "Cubic.easeInOut"
 	TweenMax.to '.panelConfig', 0.4, 
 		x: 368
 		ease: "Cubic.easeInOut"
-		delay: 0.5
 		onComplete: ->
-			console.log "in-animation: done"
+			console.log "animate"
+			abierto = "true"
 
 initConfig = ->
 	console.log "initconfig"
@@ -68,30 +72,64 @@ app.config(['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $stateP
 			.state 'calculadora', 
 				url: '/calculadora'
 				controller: 'calcCtrl'
-				templateUrl: 'partials/calculadora.html'
+				views: 
+					'main':
+						templateUrl: 'partials/calculadora.html'
 				onEnter: ->
+					$('.calc-porcentage-drag').slider()
 					sidebarIn()
+
 			.state 'configuracion', 
 				url: '/configuracion'
-				controller: 'configCtrl'
-				templateUrl: 'partials/configuracion.html'
+				views: 
+					'main':
+						controller: 'configCtrl'
+						templateUrl: 'partials/configuracion.html'
 				onEnter: ->
 					sidebarIn()
 					noClick()
 			.state 'misvw', 
 				url: '/misvw'
-				controller: 'misvwCtrl'
-				templateUrl: 'partials/misvw.html'
+				views: {
+					'main':
+						controller: 'misvwCtrl'
+						templateUrl: 'partials/misvw.html'
+				}
 				onEnter: ->
 					sidebarIn()
+
 					noClick()
 					#initConfig()
 			.state 'manejo', 
 				url: '/manejo'
-				controller: 'manejoCtrl'
-				templateUrl: 'partials/manejo.html'
+				views: 
+					'main':
+						controller: 'manejoCtrl'
+						templateUrl: 'partials/manejo.html'
 				onEnter: ->
 					sidebarIn()
+					noClick()
+					#initConfig()
+			.state 'buscador', 
+				url: '/buscador'
+				views: 
+					'buscador':
+
+						controller: 'buscarCtrl'
+						templateUrl: 'partials/buscador.html'
+				onEnter: ->
+					
+					noClick()
+					#initConfig()
+			.state 'galeria', 
+				url: '/galeria'
+				views: 
+					'buscador':
+
+						controller: 'galeriaCtrl'
+						templateUrl: 'partials/galeria.html'
+				onEnter: ->
+					
 					noClick()
 					#initConfig()
 					
@@ -103,6 +141,9 @@ app.config(['$urlRouterProvider', '$stateProvider', ($urlRouterProvider, $stateP
 	
 
 $ ->
+	$('.chngPrecio a').on "click", ->
+		$('.chngPrecio a').removeClass "active"
+		$(this).addClass "active"
 	$("a.item").on "click", ->
 		$('.item').removeClass "active"
 		$(this).addClass "active"

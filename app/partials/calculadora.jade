@@ -1,5 +1,79 @@
 #calculadora(ng-controller="configCtrl")
 	.calccontainer
+
+		.right
+			.div-xpand.modelo
+				
+				
+				.titleCont
+					p.title(ng-bind="auto.model")
+					p.subtitle {{auto.version}}
+					.precioCont
+						a.null.tuPrecio.active(href="", onclick="tuprecio('#calculadora');return false;") tu precio
+						a.null.Contado(href="", onclick="contado('#calculadora');return false;") de contado
+						.btnPrecioCont
+							.square
+						p.precio 
+							sub $
+							| {{auto.listPrice}}
+					.divide
+				
+			.div-xpand.resumen
+		
+				
+				.cont
+					p.tipo Volkswagen Bank
+					p.fiscal Premium Credit
+					p.simula Simula tu financiamiento
+					p.porcentajetitle Porcentaje de enganche:
+					.cont-drag-percent
+						p.minporcentaje.porcentajetexto 20%
+						.calc-porcentage-drag
+							a.ui-slider-handle.ui-state-default.ui-corner-all(href='#')
+								| 25%
+						p.maxporcentaje.porcentajetexto 20%
+
+					.pago
+						p.titulo Enganche:
+						p.precio 
+							sub $
+							| 6,072
+					.pago
+						p.titulo Mensualidades:
+						p.precio 
+							sub $
+							| 32,072
+					.pago
+						p.titulo Un pago final:
+						p.precio 
+							sub $
+							| 6,072
+				.finish
+					a.guardarConfig.null(href="")
+						| Regresar y probar con otro plan
+					p.finishText
+						| Ahora que tienes un plan puedes:
+					.finishBtns
+						a.pruebaBtn(href="")
+							p Prueba de manejo
+						a.simuladoraBtn(href="")
+							p Configurar otro auto
+
+
+					.divide
+
+
+			.div-xpand.legales
+				a.btn.open.null.drkbtn(href="")
+				.titleCont
+					p.subtitle Legales
+				.cont
+					p.configDescrip.legales
+						| * La información y/o imágenes aquí contenidas pueden no corresponder con total precisión (incluyendo precios, equipamiento, disponibilidad y demás aplicables) a la de los vehículos ofertados por las distribuidoras Volkswagen, por lo que le recomendamos visitar su distribuidor Volkswagen más cercano.
+					p.configDescrip.legales
+						| *Todas las imágenes son de carácter ilustrativo. Los precios son informativos para la gama 2014 y están sujetos a cambios sin previo aviso.
+						br
+						| Precios vigentes del 1 de enero al 31 de enero de 2014.
 		.left
 			.div-xpand.modelo
 				
@@ -14,124 +88,42 @@
 					
 
 				
-			.div-xpand.resumen
+			.div-xpand.calc01
 				a.btn.open.null.drkbtn(href="")
 				.titleCont
 					p.subtitle Volkswagen Bank
 				.cont
 					p.configDescrip
-						| Volkswagen te ofrece opciones de financiamiento para adquirir el auto que deseas. Elige la opción que cumpla tus requisitos.
-					
+						| Es ideal si quieres adquirir un auto para uso personal.
+					a.credito.credit(href="")
+						p.title Credit
+						p.subtitle
+							| Enganche mínimo y mensualidades fijas en el plazo que elijas.
+					a.credito.premium(href="")
+						p.title Premium Credit
+						p.subtitle
+							| Enganche, mensualidades fijas y un pago final.
+
 					.divide
-
-
-			.div-xpand.legales
+			.div-xpand.calc02
 				a.btn.open.null.drkbtn(href="")
 				.titleCont
-					p.subtitle Legales
-				.cont
-					p.configDescrip.legales
-						| * La información y/o imágenes aquí contenidas pueden no corresponder con total precisión (incluyendo precios, equipamiento, disponibilidad y demás aplicables) a la de los vehículos ofertados por las distribuidoras Volkswagen, por lo que le recomendamos visitar su distribuidor Volkswagen más cercano.
-					p.configDescrip.legales
-						| *Todas las imágenes son de carácter ilustrativo. Los precios son informativos para la gama 2014 y están sujetos a cambios sin previo aviso.
-						br
-						| Precios vigentes del 1 de enero al 31 de enero de 2014.
-		.right
-			.div-xpand.modelo
-				
-				a.btn.open.null.drkbtn(href="#")
-				.titleCont
-					p.title(ng-bind="auto.model")
-					p.subtitle {{auto.version}}
-					.precioCont
-						a.null.tuPrecio.active(href="", onclick="tuprecio('#calculadora');return false;") tu precio
-						a.null.Contado(href="", onclick="contado('#calculadora');return false;") de contado
-						.btnPrecioCont
-							.square
-						p.precio 
-							sub $
-							| {{auto.listPrice}}
-					.divide
+					p.subtitle Volkswagen Leasing
 				.cont
 					p.configDescrip
-						| {{auto.description}}
-					.alimentCont
-						p.text
-							| Alimentación
-						p.alimentacion
-							| {{auto.alimentation}}
-					.potencia-rendimiento
-						.potenciaCont
-							p.potencia
-								| {{auto.power}}
-								sub HP
-							p.title Potencia
-						.divider
-						.rendimientoCont
-							p.rendimiento
-								| {{auto.performance}}
-								sub 
-									| Km/Lt.
-							p.title Rendimiento
-
-					.divide
-			.div-xpand.resumen
-				a.btn.open.null.drkbtn(href="")
-				.titleCont
-					p.subtitle Resumen
-				.cont
-					.propiedad.transmision
-						p.titulo Transmisión
-						p.property {{auto.transmision}}
-						a.editar(href="")
-							.square
-							p Editar
-							.icon
-					.propiedad.color
-						p.titulo Color
-						p.property {{auto.color}}
-						a.editar(href="")
-							.square
-							p Editar
-							.icon
-					.propiedad.vestiduras
-						p.titulo Vestiduras
-						p.property {{auto.interiors}}
-						a.editar(href="")
-							.square
-							p Editar
-							.icon
-					.propiedad.paquetes
-						p.titulo Paquetes
-						p.property {{auto.packs}}
-						a.editar(href="")
-							.square
-							p Editar
-							.icon
-					.propiedad.servicios
-						p.titulo Servicios
-						p.property {{auto.services}}
-						a.editar(href="")
-							.square
-							p Editar
-							.icon
-					.propiedad.garantia
-						p.titulo Garantía
-						p.property {{auto.warranty}}
-						a.editar(href="")
-							.square
-							p Editar
-							.icon
-				.finish
-					a.guardarConfig.null(href="")
-						| Guardar en Mis Volkswagen
-					p.finishText
-						| Si ya terminaste tu configuracion:
-					.finishBtns
-						a.simuladoraBtn(href="")
-							p Simula tu financiamiento
-						a.pruebaBtn(href="")
-							p Prueba de manejo
+						| Ideal para actividades empresariales, además es deducible de impuestos.
+					a.credito.credit(href="")
+						p.title Credit
+						p.subtitle
+							| Enganche mínimo y mensualidades fijas en el plazo que elijas
+					a.credito.premium(href="")
+						p.title Premium Credit
+						p.subtitle
+							| Enganche, mensualidades fijas y un pago final
+					a.credito.leasing(href="")
+						p.title Premium Leasing
+						p.subtitle
+							| Arrendamiento con un monto inicial y rentas mensuales deducibles de impuestos.
 
 					.divide
 
@@ -147,3 +139,4 @@
 						| *Todas las imágenes son de carácter ilustrativo. Los precios son informativos para la gama 2014 y están sujetos a cambios sin previo aviso.
 						br
 						| Precios vigentes del 1 de enero al 31 de enero de 2014.
+		
